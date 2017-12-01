@@ -3,6 +3,7 @@
     "description": "Simple profile reader for Gran Turismo Sport.",
     "type": "library",
     "require": {
+        "php": "7.*",
         "guzzlehttp/guzzle": "^6.3"
     },
     "require-dev": {
