@@ -1,0 +1,24 @@
+{
+    "name": "choccybiccy/gtsprofile",
+    "description": "Simple profile reader for Gran Turismo Sport.",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Hughes",
+            "email": "martinph01@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Choccybiccy\\GranTurismoSport\\": ["src/"]
+        }
+    },
+    "minimum-stability": "stable"
+}
