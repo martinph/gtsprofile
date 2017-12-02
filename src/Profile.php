@@ -63,11 +63,58 @@ class Profile
     }
 
     /**
+     * @return string
+     */
+    public function getMannerPointLevel()
+    {
+        $mannerPoint = (int) $this->data['manner_point'];
+        switch(true) {
+            case 1 <= $mannerPoint && $mannerPoint <= 9:
+                return 'E';
+            case 10 <= $mannerPoint && $mannerPoint <= 19:
+                return 'D';
+            case 20 <= $mannerPoint && $mannerPoint <= 39:
+                return 'C';
+            case 40 <= $mannerPoint && $mannerPoint <= 64:
+                return 'B';
+            case 65 <= $mannerPoint && $mannerPoint <= 79:
+                return 'A';
+            case 80 <= $mannerPoint && $mannerPoint <= 99:
+                return 'S';
+            default:
+                return '-';
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function getDriverPointLevel()
+    {
+        switch ((int) $this->data['driver_class']) {
+            case 1:
+                return 'E';
+            case 2:
+                return 'D';
+            case 3:
+                return 'C';
+            case 4:
+                return 'B';
+            case 5:
+                return 'A';
+            case 6:
+                return 'S';
+            default:
+                return '-';
+        }
+    }
+
+    /**
      * Load profile data.
      *
      * @return void
      */
-    protected function load()
+    public function load()
     {
         $response = $this->httpClient->post(self::API_PROFILE_URL, [
             'form_params' => [
